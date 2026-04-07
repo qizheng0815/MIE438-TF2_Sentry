@@ -7,9 +7,9 @@ import cv2
 from pynput import keyboard
 from ultralytics import YOLO
 
-ESP32_IP = "192.168.137.33"
+ESP32_IP = "192.168.137.78"
 stream_url = f"http://{ESP32_IP}:81/stream"
-bt_port = 'COM6'  # Replace with your Bluetooth port
+bt_port = 'COM5'  # Replace with your Bluetooth port
 
 tracking = True
 model = YOLO('yolov8s.pt')  # Load the YOLOv8s model for object detection
