@@ -10,6 +10,8 @@ int firingServoPin = 18;
 int horizontalServoPin = 19;
 int tiltingServoPin = 5;
 
+
+
 char moveState = 'x';
 bool isFiring = false;
 unsigned long lastFireTime = 0;
@@ -47,7 +49,7 @@ void loop() {
         lastFireTime = millis();
         
         Serial.println("Firing!!!");
-        firingServo.write(10);
+        firingServo.write(0);
     
       }
     }
@@ -65,22 +67,22 @@ void loop() {
   }
 
   if (moveState == 'w'){
-    tiltingServo.write(135);
+    tiltingServo.write(70);
     Serial.println("Moving Forwards");
   }
   
   else if (moveState == 's'){
-    tiltingServo.write(45);
+    tiltingServo.write(110);
     Serial.println("Moving Backwards");
   }
 
   else if (moveState == 'a'){
-    horizontalServo.write(135);
+    horizontalServo.write(120);
     Serial.println("Moving Left");
   }
 
   else if (moveState == 'd'){
-    horizontalServo.write(45);
+    horizontalServo.write(60);
     Serial.println("Moving Right");
   }
 
